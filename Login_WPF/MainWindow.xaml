@@ -14,6 +14,19 @@
         WindowStartupLocation="CenterScreen">
     
     <materialDesign:Card UniformCornerRadius="15" Background= "{DynamicResource MaterialDesignPaper}" Margin="25" >
-        
+        <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
+            <StackPanel>
+
+                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
+                    <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock VerticalAlignment="Center" Text="Dark Mode" />
+                        <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="ThemeToggle" IsChecked="{Binding IsDarkTheme}" Click="toggleTheme"/>
+                        <Button ToolTip="Having Trouble Logging In?" Margin="0 8 0 0" Content="Help Me"/>
+                        <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application" Click="exitApp"/>
+                    </StackPanel>
+                    
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </materialDesign:DialogHost>
     </materialDesign:Card>
 </Window>
